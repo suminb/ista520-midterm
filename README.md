@@ -1,4 +1,4 @@
-ista521-midterm
+ista520-midterm
 ===============
 
-UA ISTA 521 midterm assignment
+UA ISTA 520 midterm assignment

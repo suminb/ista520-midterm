@@ -202,7 +202,7 @@ def runBlast(seqFile,  output_files):
     #
     blastResultFile, flag_file = output_files
     #
-    run_cmd("blastall -p blastp -d ruffus/human.protein.faa -i %s > %s" % (seqFile, blastResultFile))
+    run_cmd("blastall -p tblastx -d sequences/TE_protein_db_121015.fasta -i %s > %s" % (seqFile, blastResultFile))
     #
     #   "touch" flag file to indicate success
     #
@@ -220,10 +220,10 @@ def combineBlastResults (blastResult_and_flag_Files, combinedBlastResultFile):
 
 
 
+#if __name__ == "__main__":
 
-
-
-
+os.putenv("PATH", "/xdisk/sumin/shared/ACIC2012/REPET_linux-x64_1.4/bin:/uaopt/ncbi/blast-2.2.25/bin:" + os.getenv("PATH"))
+os.putenv("PYTHONPATH", "/home/u24/sumin/share/lib/python2.6/site-packages")
 
 #88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 

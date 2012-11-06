@@ -53,8 +53,8 @@
 #!/bin/bash
 # First parameter is the number of map tasks
 
-if [ $# -ne 6 ]; then
-    echo Usage:  [num_map_tasks] [sequence_count] [query_file] [data_dir, relative to data_dir specified in twister.properties] [input_prefix] [output_prefix]
+if [ $# -ne 3 ]; then
+    echo Usage: [num_map_tasks] [partition_file] [output_data_dir, relative to data_dir specified in twister.properties]
     exit -1
 fi
 
@@ -68,4 +68,4 @@ for i in ${TWISTER_HOME}/apps/*.jar;
   do cp=$i:${cp}
 done
 
-java -Xmx4000m -Xms1024m -XX:SurvivorRatio=10 -classpath $cp cgl.imr.samples.blast.BLAST $1 $2 $3 $4 $5 $6
+java -Xmx2000m -Xms512m -XX:SurvivorRatio=10 -classpath $cp cgl.imr.samples.blastdbextract.BLASTDBExtract $1 $2 $3
